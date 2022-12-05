@@ -1,0 +1,135 @@
+%%	HELLO
+%%	Please read the readME file for a full description of this
+%%	template and how to use it.
+%%	
+%%	Author: Ethan Taylor
+
+%inputting the settings file. I recommend keeping the
+%settings separate from the main document so settings
+%files can be version tracked and shared better
+\input{settings}
+
+%%	FRONTMATTER INPUTS
+%%	These commands will be fed into making the frontmatter 
+%%	of the document so it will be formatted correctly. The current
+%%	formatting adheres to the uab format manual.
+\author{Author Name} %your name
+\adviser{Advisor Name} %name of committee chair
+%the remaining members of committee in alphabetical order
+\committee{
+  Name A \\
+  Name B \\
+  Name C \\
+  Name D \\
+}
+%Title of proposal. Linewrapping should be formatted automatically,
+%if it does not work correctly linebreak \\ or \and can be manually
+%placed to achieve the proper formatting
+\title{Title of Proposal}
+%relevant degree
+\degree{Doctor of Philosophy}
+%this is the program that appears on the abstract page
+\program{Physics}
+%place keywords here separated by commas
+\keywords{Place up to 6 keywords here.}
+%University name for title page
+\university{The University of Alabama at Birmingham}
+%school, typically means graduate school, or Arts and Sciences, etc.
+\school{Graduate School}
+%year of graduation
+\gradyear{YEAR OF DEFENSE}
+%place, autoset to birmingham
+\place{Birmingham, Alabama}
+%abstract can be written or input here
+\abstract{
+\lipsum[1-2]
+}
+
+
+
+\begin{document}
+
+%This command makes all the front matter pages according to 
+%the formatting defined in the class file.
+\makefrontmatter
+
+%body text formatting is different from the frontmatter, so make
+%sure that all the main text of your dissertation is contained in
+%this body environment.
+\begin{body}
+
+\chapter{INTRODUCTION}
+Sectioning is done in this format through the use of section and subsection (and chapters). Sectioning is much more lenient in the format manual, as long as you are consistent throughout the entire document and it provides a professional and readable look. This template only is adequately formatted for sections and subsections, but that alone should be more than sufficient for most users. If you require more sectioning, you can test subsubsections, and just renewcommand the relevant parameters. We also show the usage of citations here. Citations should show in the reference section as single spaced within each reference, but double spaced with respect to adjacent references.  \cite{loudonQuantumTheoryLight2000,suterPhysicsLaseratomInteractions1997, weinerLightmatterInteractionPhysics2017}
+
+I recommend writing each section individually for ease of editing and version control, and inputting them into this main file via the input command.
+
+\section{Second-level section}
+You can also include code via the formatting defined in the settings file if desired and can be edited to be displayed as desired. Here is an example of one code snippet that is manually written, but the listings package is able to input and format code files directly as well.
+\begin{lstlisting}
+from numpy import pi
+print("Hello World! My name is {}.".format(pi))
+\end{lstlisting}
+\verb|Hello World! My name is 3.14.|
+\subsection{Third-level section}
+\lipsum[1]
+
+
+\chapter{LITERATURE REVIEW}
+Here is an example of how to use a table in the text. General formatting and usage of tables should be consistent across all tables in the text as per the format manual, but as long as you use a table environment and a proper caption then the table will be automatically numbered and added to the list of tables. Tables can use the same placement keys as figure environments, but in general are more likely to be placed closer to the inputted location. 
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline 
+			1 & 1 \\ 
+			\hline 
+			1 & 1 \\ 
+			\hline 
+		\end{tabular}
+	\end{center}
+	\caption{Test Table}
+	\label{table:test table}
+\end{table}
+ 
+\lipsum[1-2]
+
+
+\chapter{MEAT AND POTATOES(A GREAT SAYING AND A GREAT BASIS FOR STEW)}
+Here we just are showing that very long titles can be wrapped correctly. Below is also the standard for inputting figures. Figures are automatically added to the list of figures based on their caption. You can used placers like [h!] to try and force \LaTeX to prefer certain placements of the float over others. In general you shouldn't need to use it often as it will be placed where it best fits with the surrounding text or at the end of the chapter, which satisfies the format guidelines. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=\textwidth]{example-image-a}
+	\end{center}
+	\caption{Test Figure}
+	\label{fig:test figure}
+\end{figure}
+
+\lipsum[1]
+
+
+%%	REFERENCES
+%%	Here we define and import the references. We have a bib style
+%%	that can be used and should be sufficient(uabthesis-plain) but if
+%%	you want different formatting a different style should be able to be
+%%	substituted without issue.
+\renewcommand{\bibsection}{\topskip=1in\chapter*{REFERENCES}\topskip=0in \addcontentsline{toc}{chapter}{REFERENCES}}
+\bibliographystyle{uabthesis-plain}
+\bibliography{bibliography}
+
+%%	APPENDICES
+%%	If you are using appendices, do that in this below environment.
+%%	You can use chapters and sectioning as typical in this environment
+%%	and it should be properly named and added to the table of contents.
+\begin{appendices}
+\addtocontents{toc}{\setlength{\cftchapnumwidth}{1em}}
+\renewcommand{\appendixname}{APPENDIX}
+\addtocontents{toc}{\setcounter{tocdepth}{0}}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{}}
+\chapter{THE FIRST APPENDIX}
+\lipsum[1]
+\end{appendices}
+
+\end{body}
+
+\end{document}

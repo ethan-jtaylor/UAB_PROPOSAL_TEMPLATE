@@ -1,0 +1,52 @@
+%%	SETTINGS FOR THESIS
+%%	Here are some standard and recommended settings for
+%%	use in writing your thesis or dissertation. Since I 
+%%	recommend splitting your latex files into many subfiles,
+%%	this settings file reflect this.
+
+\documentclass{UABproposalclass}
+
+%standard packages you may want and some necessary ones
+\usepackage{cite}   
+\usepackage{color}    
+\usepackage{listings}     
+\usepackage[numbers]{natbib}
+\usepackage{graphicx} 
+\usepackage[titletoc]{appendix}	
+
+%defining a graphics path to an "images" folder.		
+\graphicspath{{./images/}}
+
+%lipsum only necessary to demonstrate 
+%template usage, free to remove.
+\usepackage{lipsum}	
+
+%%	CODE SETTINGS
+%%	Here I like to define a nice styling for displaying code
+%%	using listings. If you do not anticipate code being present
+%%	in your document you can remove the listings package, color
+%%	package, and the following section. 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    language=Python,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}

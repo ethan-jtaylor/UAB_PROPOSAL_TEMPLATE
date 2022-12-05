@@ -1,0 +1,13 @@
+\contentsline {chapter}{ABSTRACT}{iii}{}%
+\contentsline {chapter}{LIST OF TABLES}{v}{}%
+\contentsline {chapter}{LIST OF FIGURES}{vi}{}%
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{}%
+\contentsline {section}{\numberline {1.1}Second-level section}{1}{}%
+\contentsline {subsection}{\numberline {1.1.1}Third-level section}{2}{}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}{}%
+\contentsline {chapter}{\numberline {3}MEAT AND POTATOES(A GREAT SAYING AND A GREAT BASIS FOR STEW)}{5}{}%
+\contentsline {chapter}{REFERENCES}{7}{}%
+\cftchapnumwidth 1em\relax 
+\global \c@tocdepth 0\relax 
+\renewcommand {\cftchappresnum }{}
+\contentsline {chapter}{APPENDIX \numberline {A}THE FIRST APPENDIX}{8}{}%
